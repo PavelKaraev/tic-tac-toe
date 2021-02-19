@@ -1,0 +1,7 @@
+<button type="button" class="board__square" *ngIf="!value" (click)="move(idx)">{{ value }}</button>
+<button type="button" class="board__square" *ngIf="value === 'X'">
+  <app-cross></app-cross>
+</button>
+<button type="button" class="board__square" *ngIf="value === 'O'">
+  <app-zero></app-zero>
+</button>

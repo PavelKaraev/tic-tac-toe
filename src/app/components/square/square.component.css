@@ -1,0 +1,38 @@
+.board__square {
+  width: 109.6px;
+  height: 109.6px;
+  padding: 0;
+  border: none;
+  background-color: #44425E;
+  outline: none;
+  cursor: pointer;
+}
+
+.board__square:disabled {
+  cursor: default;
+}
+
+:host(:nth-child(3n + 2)) {
+  border-left: 3px solid #A855C1;
+  border-right: 3px solid #A855C1;
+}
+
+:host(:nth-child(1n + 4)) {
+  border-top: 3px solid #A855C1;
+}
+
+/*
+:host(.cross:nth-child(3n + 1))::after,
+:host(.cross:nth-child(3n + 2))::after,
+:host(.cross:nth-child(3n + 3))::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 100%;
+  top: 13px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #AF3D38;
+}
+*/

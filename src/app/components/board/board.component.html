@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="board">
+    <app-square *ngFor="let square of board; let id = index" [ngClass]="{cross: board[id] == 'X', zero: board[id] == 'O'}" (onClick)="moveOn($event)" [idx]="id" [value]="board[id]"></app-square>
+    <div class="board__horizontal-line"></div>
+    <div class="board__vertical-line"></div>
+    <div class="board__diagonal-line"></div>
+  </div>
+  <div class="game__message">
+    <p>Score</p>
+    <p>
+      <span>{{ players[0].name }}: </span>
+      <span>{{ players[0].score }}</span>
+    </p>
+    <p>
+      <span>{{ players[1].name }}: </span>
+      <span>{{ players[1].score }}</span>
+    </p>
+  </div>
+</div>
+<div class="winner" *ngIf="winner">
+  <p class="winner__message">Player {{ winner }} win!</p>
+  <button type="button" (click)="startNewGame()" class="btn">Start new game</button>
+</div>
+<div class="winner" *ngIf="draw">
+  <p class="winner__message">Draw!</p>
+  <button type="button" (click)="startNewGame()" class="btn">Start new game</button>
+</div>

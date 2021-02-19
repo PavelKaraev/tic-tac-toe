@@ -1,0 +1,149 @@
+.board {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  flex-flow: wrap;
+  width: 335px;
+  height: 335px;
+  margin: 0 auto;
+  border-radius: 3px;
+  line-height: 0;
+}
+
+.winner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.winner__message {
+  display: inline-block;
+  margin-top: 0;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.game__message {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.game__message p{
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.board__vertical-line {
+  display: none;
+  position: absolute;
+  width: 10px;
+  height: calc(100% - 26px);
+  bottom: 0;
+  top: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #AF3D38;
+}
+
+.cross:nth-child(1) ~ .cross:nth-child(4) ~ .cross:nth-child(7) ~ .board__vertical-line,
+.cross:nth-child(2) ~ .cross:nth-child(5) ~ .cross:nth-child(8) ~ .board__vertical-line,
+.cross:nth-child(3) ~ .cross:nth-child(6) ~ .cross:nth-child(9) ~ .board__vertical-line,
+.zero:nth-child(1) ~ .zero:nth-child(4) ~ .zero:nth-child(7) ~ .board__vertical-line,
+.zero:nth-child(2) ~ .zero:nth-child(5) ~ .zero:nth-child(8) ~ .board__vertical-line,
+.zero:nth-child(3) ~ .zero:nth-child(6) ~ .zero:nth-child(9) ~ .board__vertical-line {
+  display: block;
+}
+
+.cross:nth-child(1) ~ .cross:nth-child(4) ~ .cross:nth-child(7) ~ .board__vertical-line,
+.zero:nth-child(1) ~ .zero:nth-child(4) ~ .zero:nth-child(7) ~ .board__vertical-line {
+  left: 49px;
+}
+
+.cross:nth-child(2) ~ .cross:nth-child(5) ~ .cross:nth-child(8) ~ .board__vertical-line,
+.zero:nth-child(2) ~ .zero:nth-child(5) ~ .zero:nth-child(8) ~ .board__vertical-line {
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.cross:nth-child(3) ~ .cross:nth-child(6) ~ .cross:nth-child(9) ~ .board__vertical-line,
+.zero:nth-child(3) ~ .zero:nth-child(6) ~ .zero:nth-child(9) ~ .board__vertical-line {
+  right: 49px;
+}
+
+.board__horizontal-line {
+  display: none;
+  position: absolute;
+  width: calc(100% - 26px);
+  height: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #AF3D38;
+}
+
+.cross:nth-child(1) ~ .cross:nth-child(2) ~ .cross:nth-child(3) ~ .board__horizontal-line,
+.cross:nth-child(4) ~ .cross:nth-child(5) ~ .cross:nth-child(6) ~ .board__horizontal-line,
+.cross:nth-child(7) ~ .cross:nth-child(8) ~ .cross:nth-child(9) ~ .board__horizontal-line,
+.zero:nth-child(1) ~ .zero:nth-child(2) ~ .zero:nth-child(3) ~ .board__horizontal-line,
+.zero:nth-child(4) ~ .zero:nth-child(5) ~ .zero:nth-child(6) ~ .board__horizontal-line,
+.zero:nth-child(7) ~ .zero:nth-child(8) ~ .zero:nth-child(9) ~ .board__horizontal-line  {
+  display: block;
+}
+
+.cross:nth-child(1) ~ .cross:nth-child(2) ~ .cross:nth-child(3) ~ .board__horizontal-line,
+.zero:nth-child(1) ~ .zero:nth-child(2) ~ .zero:nth-child(3) ~ .board__horizontal-line {
+  top: 46px;
+}
+
+.cross:nth-child(4) ~ .cross:nth-child(5) ~ .cross:nth-child(6) ~ .board__horizontal-line,
+.zero:nth-child(4) ~ .zero:nth-child(5) ~ .zero:nth-child(6) ~ .board__horizontal-line {
+  top: -5px;
+  bottom: 0;
+  margin: auto;
+}
+
+.cross:nth-child(7) ~ .cross:nth-child(8) ~ .cross:nth-child(9) ~ .board__horizontal-line,
+.zero:nth-child(7) ~ .zero:nth-child(8) ~ .zero:nth-child(9) ~ .board__horizontal-line {
+  bottom: 54px;
+}
+
+.board__diagonal-line {
+  display: none;
+  position: absolute;
+  width: 11px;
+  height: calc(100% - -74px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #AF3D38;
+}
+
+.cross:nth-child(1) ~ .cross:nth-child(5) ~ .cross:nth-child(9) ~ .board__diagonal-line,
+.cross:nth-child(3) ~ .cross:nth-child(5) ~ .cross:nth-child(7) ~ .board__diagonal-line,
+.zero:nth-child(1) ~ .zero:nth-child(5) ~ .zero:nth-child(9) ~ .board__diagonal-line,
+.zero:nth-child(3) ~ .zero:nth-child(5) ~ .zero:nth-child(7) ~ .board__diagonal-line {
+  display: block;
+}
+
+.cross:nth-child(3) ~ .cross:nth-child(5) ~ .cross:nth-child(7) ~ .board__diagonal-line,
+.zero:nth-child(3) ~ .zero:nth-child(5) ~ .zero:nth-child(7) ~ .board__diagonal-line {
+  top: -5px;
+  transform: rotate(45deg);
+}
+.cross:nth-child(1) ~ .cross:nth-child(5) ~ .cross:nth-child(9) ~ .board__diagonal-line,
+.zero:nth-child(1) ~ .zero:nth-child(5) ~ .zero:nth-child(9) ~ .board__diagonal-line {
+  top: -3px;
+  transform: rotate(-45deg);
+}
