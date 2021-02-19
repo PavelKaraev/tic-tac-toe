@@ -18,8 +18,19 @@ export class BoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.players.push(new Player(prompt('What is first player name?', 'Player 1')))
-    this.players.push(new Player(prompt('What is second player name?', 'Player 2')))
+    let playerOneName: string;
+    let playerTwoName: string;
+
+    while(!playerOneName || playerOneName == null || playerOneName == " ") {
+      playerOneName = prompt('What is first player name?', 'Player 1');
+    }
+
+    while(!playerTwoName || playerTwoName == null || playerTwoName == " ") {
+      playerTwoName = prompt('What is second player name?', 'Player 2');
+    }
+
+    this.players.push(new Player(playerOneName));
+    this.players.push(new Player(playerTwoName));
     this.startNewGame()
   }
 
@@ -67,9 +78,11 @@ export class BoardComponent implements OnInit {
   }
 
   determineDraw() {
-    if(this.moveCounter == (Math.pow(3, 2) - 1)){
-      return true;
-    }
+    let fullArray = this.board.every((square) => {
+      return square;
+    })
+
+    return fullArray && !this.winner;
   }
 
 }
