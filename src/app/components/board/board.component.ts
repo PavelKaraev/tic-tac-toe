@@ -14,6 +14,7 @@ export class BoardComponent implements OnInit {
   board: any[];
   moveCounter: number = 0;
   xIsNext: boolean;
+  gameOverMessage: string;
 
   constructor() { }
 
@@ -31,7 +32,7 @@ export class BoardComponent implements OnInit {
 
     this.players.push(new Player(playerOneName));
     this.players.push(new Player(playerTwoName));
-    this.startNewGame()
+    this.newGame()
   }
 
   moveOn(id: number) {
@@ -41,9 +42,15 @@ export class BoardComponent implements OnInit {
 
     this.winner = this.determineWinner();
     this.draw = this.determineDraw();
+
+    if(this.winner) {
+      this.gameOverMessage = `Player ${this.winner} win!`;
+    }else if(this.draw) {
+      this.gameOverMessage = "Draw!"
+    }
   }
 
-  startNewGame() {
+  newGame() {
     this.board = new Array(9).fill(null);
     this.xIsNext = true;
     this.winner = null;

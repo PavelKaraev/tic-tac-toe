@@ -10,38 +10,6 @@
   line-height: 0;
 }
 
-.winner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-  background-color: rgba(0, 0, 0, .5);
-}
-
-.winner__message {
-  display: inline-block;
-  margin-top: 0;
-  font-size: 40px;
-  font-family: sans-serif;
-}
-
-.game__message {
-  display: inline-block;
-  margin-left: 30px;
-  font-size: 40px;
-  font-family: sans-serif;
-}
-
-.game__message p{
-  margin-top: 0;
-  margin-bottom: 20px;
-}
-
 .board__vertical-line {
   display: none;
   position: absolute;

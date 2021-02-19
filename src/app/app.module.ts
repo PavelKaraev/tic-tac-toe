@@ -6,6 +6,8 @@ import { SquareComponent } from './components/square/square.component';
 import { BoardComponent } from './components/board/board.component';
 import { CrossComponent } from './components/cross/cross.component';
 import { ZeroComponent } from './components/zero/zero.component';
+import { GameOverMessageComponent } from './components/game-over-message/game-over-message.component';
+import { ScoreComponent } from './components/score/score.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { ZeroComponent } from './components/zero/zero.component';
     SquareComponent,
     BoardComponent,
     CrossComponent,
-    ZeroComponent
+    ZeroComponent,
+    GameOverMessageComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule

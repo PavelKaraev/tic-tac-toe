@@ -10,14 +10,16 @@ export class SquareComponent implements OnInit {
   @Input() value: 'X' | 'O';
   @Output() onClick = new EventEmitter<number>();
 
-  move(id: number) {
-    this.onClick.emit(id)
-  }
 
   constructor() { }
 
   ngOnInit(): void {
 
   }
+
+  move(id: number) {
+    this.onClick.emit(id)
+  }
+
 
 }

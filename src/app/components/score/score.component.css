@@ -1,0 +1,11 @@
+.score__message {
+  display: inline-block;
+  margin-left: 30px;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.score__message p{
+  margin-top: 0;
+  margin-bottom: 20px;
+}
